@@ -58,69 +58,27 @@ namespace RocketApi.Controllers
 
         // Changing the status of a specific Column
         [HttpPut("{id}/Status/")]
-        public async Task<IActionResult> UpdateStatus([FromRoute] long id, Columns current)
+        public async Task<IActionResult> UpdateStatus([FromRoute] long id, Columns mycolumn)
         {
 
-            if (id != current.Id)
+            if (id != mycolumn.Id)
             {
                 return BadRequest();
             }
 
-            if (current.ColumnStatus == "Active" || current.ColumnStatus == "Inactive" || current.ColumnStatus == "Intervention")
+            if (mycolumn.ColumnStatus == "Active" || mycolumn.ColumnStatus == "Inactive" || mycolumn.ColumnStatus == "Intervention")
             {
-                _context.Entry(current).State = EntityState.Modified;
+                _context.Entry(mycolumn).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
 
-                return Content("Column: " + current.Id + ", status as been change to: " + current.ColumnStatus);
+                return Content("Column: " + mycolumn.Id + ", status as been change to: " + mycolumn.ColumnStatus);
             }
 
             return Content("Please insert a valid status : Intervention, Inactive, Active, Tray again !  ");
         }
 
 
-        // PUT: api/Columns/10
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutColumns(long id, Columns columns)
-        {
-            if (id != columns.Id)
-            {
-                return BadRequest();
-            }
 
-            _context.Entry(columns).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ColumnsExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/Columns
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPost]
-        public async Task<ActionResult<Columns>> PostColumns(Columns columns)
-        {
-            _context.Columns.Add(columns);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetColumns", new { id = columns.Id }, columns);
-        }
 
         // DELETE: api/Columns/5
         [HttpDelete("{id}")]
