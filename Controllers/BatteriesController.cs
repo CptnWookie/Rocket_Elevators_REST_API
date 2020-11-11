@@ -101,6 +101,68 @@ namespace RocketApi.Controllers
             return batteries;
         }
 
+        // 1.  Retrieving the current status of a specific Battery
+
+        // GET: api/Batteries/{id}/status
+        [HttpGet("{id}/Status")]
+        public async Task<ActionResult<string>> GetBatteryStatus([FromRoute] long id)
+        {
+            var bb = await _context.Batteries.FindAsync(id);
+
+            if (bb == null)
+                return NotFound();
+            Console.WriteLine("Get batterie status", bb.BatteryStatus);
+
+            return bb.BatteryStatus;
+
+        }
+
+        //  2. Changing the status of a specific Battery
+
+        // POST: api/Batteries/{id}/status
+        // [HttpPut("{id}/Status/")]
+        // public async Task<ActionResult> UpdateBatteryStatus([FromRoute] long id)
+        // {
+        //     var bb = await _context.Batteries.FindAsync(id);
+
+        //     if (bb == null)
+        //     {
+        //         return NotFound();
+        //     }
+        //     if (bb.BatteryStatus == "ACTIVE")
+        //     {
+        //         bb.BatteryStatus = "INACTIVE";
+        //     }
+
+        //     else { bb.BatteryStatus = "ACTIVE"; }
+
+        //     _context.Batteries.Update(bb);
+        //     await _context.SaveChangesAsync();
+
+        //     return NoContent();
+        // }
+
+        [HttpPut("{id}/Status/")]
+        public async Task<IActionResult> UpdateStatus([FromRoute] long id, Batteries item)
+        {
+
+            if (id != item.Id)
+            {
+                return BadRequest();
+            }
+
+            if (item.BatteryStatus == "Intervention" || item.BatteryStatus == "Active" || item.BatteryStatus == "Inactive")
+            {
+                _context.Entry(item).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return Content("Battery: " + item.Id + ", status as been change to: " + item.BatteryStatus);
+            }
+
+            return Content("You need to insert a valid status : Intervention, Inactive, Active, Thank you !  ");
+        }
+
+
         private bool BatteriesExists(long id)
         {
             return _context.Batteries.Any(e => e.Id == id);
