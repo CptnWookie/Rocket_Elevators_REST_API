@@ -62,6 +62,9 @@ jspm_packages/
 bin/
 buildcache/
 tmp/
+
+obj/
+
 # Junit 
 test-results* 
 
