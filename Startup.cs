@@ -21,11 +21,12 @@ namespace RocketApi
     {
 
         public IConfiguration Configuration { get; }
+
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
-
 
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -36,25 +37,15 @@ namespace RocketApi
             {
                 Console.WriteLine("Bloc config");
                 services.AddControllers().AddNewtonsoftJson();
-
-
                 services.AddDbContext<RocketContext>(opt =>
-            opt.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
-            }
+                opt.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+             }       
 
-
-            catch (Exception ex)
-            {
-                Console.WriteLine("Erreur BD", ex);
-            }
-
-            //     services.AddDbContext<RocketContext>(options =>
-            //options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
-            //   options.UseMySql("server=localhost;port=3306;database=app_development;uid=root;password=SimpleYellow"));
-
+              catch (Exception ex)
+              {
+                  Console.WriteLine("Erreur BD", ex);
+              }
         }
-
-
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
