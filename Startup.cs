@@ -35,7 +35,7 @@ namespace RocketApi
             try
             {
                 Console.WriteLine("Bloc config");
-                services.AddControllers();
+                services.AddControllers().AddNewtonsoftJson();
                 services.AddDbContext<RocketContext>(opt =>
             opt.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             }
