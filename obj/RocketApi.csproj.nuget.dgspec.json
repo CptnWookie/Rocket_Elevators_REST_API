@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CodeBoxx\\Odyssey\\RestAPI\\RocketApi\\RocketApi.csproj": {}
+    "d:\\CodeBoxx\\Odyssey\\RestAPI\\RocketApi\\RocketApi.csproj": {}
   },
   "projects": {
-    "D:\\CodeBoxx\\Odyssey\\RestAPI\\RocketApi\\RocketApi.csproj": {
+    "d:\\CodeBoxx\\Odyssey\\RestAPI\\RocketApi\\RocketApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CodeBoxx\\Odyssey\\RestAPI\\RocketApi\\RocketApi.csproj",
+        "projectUniqueName": "d:\\CodeBoxx\\Odyssey\\RestAPI\\RocketApi\\RocketApi.csproj",
         "projectName": "RocketApi",
-        "projectPath": "D:\\CodeBoxx\\Odyssey\\RestAPI\\RocketApi\\RocketApi.csproj",
+        "projectPath": "d:\\CodeBoxx\\Odyssey\\RestAPI\\RocketApi\\RocketApi.csproj",
         "packagesPath": "C:\\Users\\saade\\.nuget\\packages\\",
-        "outputPath": "D:\\CodeBoxx\\Odyssey\\RestAPI\\RocketApi\\obj\\",
+        "outputPath": "d:\\CodeBoxx\\Odyssey\\RestAPI\\RocketApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\saade\\AppData\\Roaming\\NuGet\\NuGet.Config",

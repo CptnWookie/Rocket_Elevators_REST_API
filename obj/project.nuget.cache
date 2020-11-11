@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8HdnYeZHLoP7MiJAyYyA58G+5wyiRBobifEGZfU1I8lFZlz1fOFmo31salIvdiIgOG/hm3eOT4uEc7zFx570Sg==",
+  "dgSpecHash": "M3cM+NwhRk5qeOPnS4FRE78qincmscCJQdeqQKtSlIexhay0qOsnu/eiTzM0SarsUUNi4AoSFeergz7N0VYU3A==",
   "success": true,
-  "projectFilePath": "D:\\CodeBoxx\\Odyssey\\RestAPI\\RocketApi\\RocketApi.csproj",
+  "projectFilePath": "d:\\CodeBoxx\\Odyssey\\RestAPI\\RocketApi\\RocketApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\saade\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\saade\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",
