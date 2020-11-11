@@ -58,8 +58,27 @@ namespace RocketApi.Controllers
         }
 
         // Changing the status of a specific Elevator
+        [HttpPut("{id}/Status")]
+        public async Task<IActionResult> UpdateElevatorStatus([FromRoute] long id, Elevators elevator)
+        {
 
 
+            if (id != elevator.Id)
+            {
+                Console.WriteLine(elevator.Id);
+                return Content("Wrong id ! please check and try again");
+            }
+
+            if (elevator.ElevatorStatus == "Active" || elevator.ElevatorStatus == "Inactive" || elevator.ElevatorStatus == "Intervention")
+            {
+                _context.Entry(elevator).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return Content("Elevator: " + elevator.Id + ", status as been change to: " + elevator.ElevatorStatus);
+            }
+
+            return Content("Please insert a valid status : Intervention, Inactive, Active, Tray again !  ");
+        }
 
 
         // DELETE: api/Elevators/5
