@@ -27,7 +27,7 @@ namespace RocketApi.Controllers
             return await _context.Columns.ToListAsync();
         }
 
-        // GET: api/Columns/5
+        // GET: api/Columns/10
         [HttpGet("{id}")]
         public async Task<ActionResult<Columns>> GetColumns(long id)
         {
@@ -41,7 +41,44 @@ namespace RocketApi.Controllers
             return columns;
         }
 
-        // PUT: api/Columns/5
+        // Retrieving the current status of a specific Column
+        // GET: api/Columns/{id}/status
+        [HttpGet("{id}/Status")]
+        public async Task<ActionResult<string>> GetColumnStatus([FromRoute] long id)
+        {
+            var cc = await _context.Columns.FindAsync(id);
+
+            if (cc == null)
+                return NotFound();
+            Console.WriteLine("Get batterie status", cc.ColumnStatus);
+
+            return cc.ColumnStatus;
+
+        }
+
+        // Changing the status of a specific Column
+        [HttpPut("{id}/Status/")]
+        public async Task<IActionResult> UpdateStatus([FromRoute] long id, Columns current)
+        {
+
+            if (id != current.Id)
+            {
+                return BadRequest();
+            }
+
+            if (current.ColumnStatus == "Active" || current.ColumnStatus == "Inactive" || current.ColumnStatus == "Intervention")
+            {
+                _context.Entry(current).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return Content("Column: " + current.Id + ", status as been change to: " + current.ColumnStatus);
+            }
+
+            return Content("Please insert a valid status : Intervention, Inactive, Active, Tray again !  ");
+        }
+
+
+        // PUT: api/Columns/10
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]

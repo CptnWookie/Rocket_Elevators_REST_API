@@ -78,7 +78,7 @@ namespace RocketApi.Controllers
                 return Content("Battery: " + current.Id + ", status as been change to: " + current.BatteryStatus);
             }
 
-            return Content("You need to insert a valid status : Intervention, Inactive, Active, Tray again please !  ");
+            return Content("Please insert a valid status : Intervention, Inactive, Active, Tray again !  ");
         }
 
 
