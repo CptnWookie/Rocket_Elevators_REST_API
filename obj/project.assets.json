@@ -132,7 +132,7 @@
       "Microsoft.CodeAnalysis.Analyzers/2.9.4": {
         "type": "package",
         "build": {
-          "build/_._": {}
+          "build/Microsoft.CodeAnalysis.Analyzers.props": {}
         }
       },
       "Microsoft.CodeAnalysis.Common/3.3.1": {
@@ -9379,6 +9379,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Microsoft.CodeAnalysis.Analyzers >= 2.9.4",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.10",
       "Microsoft.EntityFrameworkCore.Relational >= 3.1.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.10",
@@ -9389,19 +9390,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Alexandre\\.nuget\\packages\\": {}
+    "/home/alexandre/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Git\\Rocket_Elevators_REST_API\\RocketApi.csproj",
+      "projectUniqueName": "/mnt/e/Git/Rocket_Elevators_REST_API/RocketApi.csproj",
       "projectName": "RocketApi",
-      "projectPath": "E:\\Git\\Rocket_Elevators_REST_API\\RocketApi.csproj",
-      "packagesPath": "C:\\Users\\Alexandre\\.nuget\\packages\\",
-      "outputPath": "E:\\Git\\Rocket_Elevators_REST_API\\obj\\",
+      "projectPath": "/mnt/e/Git/Rocket_Elevators_REST_API/RocketApi.csproj",
+      "packagesPath": "/home/alexandre/.nuget/packages/",
+      "outputPath": "/mnt/e/Git/Rocket_Elevators_REST_API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Alexandre\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/alexandre/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -9423,6 +9424,12 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "Microsoft.CodeAnalysis.Analyzers": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[2.9.4, )"
+          },
           "Microsoft.EntityFrameworkCore.Design": {
             "target": "Package",
             "version": "[3.1.10, )"
@@ -9470,7 +9477,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.404/RuntimeIdentifierGraph.json"
       }
     }
   }
