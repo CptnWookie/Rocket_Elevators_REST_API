@@ -27,7 +27,7 @@ namespace RocketApi.Controllers
             return await _context.Columns.ToListAsync();
         }
 
-        // GET: api/Columns/5
+        // GET: api/Columns/10
         [HttpGet("{id}")]
         public async Task<ActionResult<Columns>> GetColumns(long id)
         {
@@ -41,49 +41,44 @@ namespace RocketApi.Controllers
             return columns;
         }
 
-        // PUT: api/Columns/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutColumns(long id, Columns columns)
+        // Retrieving the current status of a specific Column
+        // GET: api/Columns/{id}/status
+        [HttpGet("{id}/Status")]
+        public async Task<ActionResult<string>> GetColumnStatus([FromRoute] long id)
         {
-            if (id != columns.Id)
+            var cc = await _context.Columns.FindAsync(id);
+
+            if (cc == null)
+                return NotFound();
+            Console.WriteLine("Get batterie status", cc.ColumnStatus);
+
+            return cc.ColumnStatus;
+
+        }
+
+        // Changing the status of a specific Column
+        [HttpPut("{id}/Status/")]
+        public async Task<IActionResult> UpdateStatus([FromRoute] long id, Columns mycolumn)
+        {
+
+            if (id != mycolumn.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(columns).State = EntityState.Modified;
-
-            try
+            if (mycolumn.ColumnStatus == "Active" || mycolumn.ColumnStatus == "Inactive" || mycolumn.ColumnStatus == "Intervention")
             {
+                _context.Entry(mycolumn).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ColumnsExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+
+                return Content("Column: " + mycolumn.Id + ", status as been change to: " + mycolumn.ColumnStatus);
             }
 
-            return NoContent();
+            return Content("Please insert a valid status : Intervention, Inactive, Active, Tray again !  ");
         }
 
-        // POST: api/Columns
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPost]
-        public async Task<ActionResult<Columns>> PostColumns(Columns columns)
-        {
-            _context.Columns.Add(columns);
-            await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetColumns", new { id = columns.Id }, columns);
-        }
+
 
         // DELETE: api/Columns/5
         [HttpDelete("{id}")]

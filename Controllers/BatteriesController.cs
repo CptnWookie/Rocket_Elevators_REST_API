@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RocketApi.Models;
@@ -20,14 +21,14 @@ namespace RocketApi.Controllers
             _context = context;
         }
 
-        // GET: api/Batteries
+        // GET: api/Batteries: All batteries
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Batteries>>> GetBatteries()
         {
             return await _context.Batteries.ToListAsync();
         }
 
-        // GET: api/Batteries/5
+        // GET: api/Batteries/10
         [HttpGet("{id}")]
         public async Task<ActionResult<Batteries>> GetBatteries(long id)
         {
@@ -41,49 +42,47 @@ namespace RocketApi.Controllers
             return batteries;
         }
 
-        // PUT: api/Batteries/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutBatteries(long id, Batteries batteries)
+
+        // 1.  Retrieving the current status of a specific Battery
+
+        // GET: api/Batteries/{id}/status
+        [HttpGet("{id}/Status")]
+        public async Task<ActionResult<string>> GetBatteryStatus([FromRoute] long id)
         {
-            if (id != batteries.Id)
+            var bb = await _context.Batteries.FindAsync(id);
+
+            if (bb == null)
+                return NotFound();
+            Console.WriteLine("Get batterie status", bb.BatteryStatus);
+
+            return bb.BatteryStatus;
+
+        }
+
+        //  2. Changing the status of a specific Battery  
+
+        [HttpPut("{id}/Status/")]
+        public async Task<IActionResult> UpdateStatus([FromRoute] long id, Batteries current)
+        {
+
+            if (id != current.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(batteries).State = EntityState.Modified;
-
-            try
+            if (current.BatteryStatus == "Active" || current.BatteryStatus == "Inactive" || current.BatteryStatus == "Intervention")
             {
+                _context.Entry(current).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!BatteriesExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+
+                return Content("Battery: " + current.Id + ", status as been change to: " + current.BatteryStatus);
             }
 
-            return NoContent();
+            return Content("Please insert a valid status : Intervention, Inactive, Active, Tray again !  ");
         }
 
-        // POST: api/Batteries
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPost]
-        public async Task<ActionResult<Batteries>> PostBatteries(Batteries batteries)
-        {
-            _context.Batteries.Add(batteries);
-            await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetBatteries", new { id = batteries.Id }, batteries);
-        }
+
 
         // DELETE: api/Batteries/5
         [HttpDelete("{id}")]
@@ -100,6 +99,9 @@ namespace RocketApi.Controllers
 
             return batteries;
         }
+
+
+
 
         private bool BatteriesExists(long id)
         {
