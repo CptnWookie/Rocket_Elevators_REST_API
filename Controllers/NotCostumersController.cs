@@ -21,15 +21,20 @@ namespace RocketApi.Controllers
         }
 
         // GET: api/NotCostumers
+        // Retrieving a list of Leads created in the last 30 days who have not yet become customers.
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Leads>>> GetLeads()
+        public IEnumerable<Leads> GetLeads()
         {
-            return await _context.Leads.ToListAsync();
 
+            IEnumerable<Leads> Leads =
+            from lead in _context.Leads
+                // we select all the leads made it by non customers 
+            where !(from c in _context.Customers select c.UserId).Contains(lead.UserId)
+            // the last 30 days
+            && lead.CreatedAt >= DateTime.UtcNow.AddDays(-30)
+            select lead;
 
-
-
-
+            return Leads.ToList();
         }
 
 
