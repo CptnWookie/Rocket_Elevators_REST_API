@@ -147,7 +147,7 @@ https://alexleblanc-rocketelevators.xyz/api/NotCostumers
 ## Response Example
 
 ```html
-https://restcountries.eu/rest/v2/alpha/col
+https://alexleblanc-rocketelevators.xyz/api/Elevators/3
 ```
 
 ```json
