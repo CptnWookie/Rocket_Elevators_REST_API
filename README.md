@@ -16,36 +16,40 @@ REST API using C # and .NET Core allow requesting Rocket Elevators systems to ac
 
 Below are described the REST endpoints available that you can use to connect Rocket Elevators information system to the equipment in operation throughout the territory served.
 
+## Link to Postman collection
+
+**[Postman collection](https://www.getpostman.com/collections/bd98e754ee804e6f5fcc)**
+
 ## Battery
 
 ### All
 
 ```html
-https://alexleblanc-rocketelevators.xyz/api/Batteries
+https://rocketelevatorsrest-api.azurewebsites.net/api/Batteries
 ```
 
 ### Retrieving a specific Battery: Search by id.
 
 ```html
-https://alexleblanc-rocketelevators.xyz/api/Batteries/{id}
+https://rocketelevatorsrest-api.azurewebsites.net/api/Batteries/{id}
 ```
 
 ### Retrieving the current status of a specific Battery
 
 ```html
-https://alexleblanc-rocketelevators.xyz/api/Batteries/{id}/status
+https://rocketelevatorsrest-api.azurewebsites.net/api/Batteries/{id}/status
 ```
 
 ### Changing the status of a specific Battery (PUT request)
 
 ```html
-https://alexleblanc-rocketelevators.xyz/api/Batteries/{id}/status
+https://rocketelevatorsrest-api.azurewebsites.net/api/Batteries/{id}/status
 ```
 
 ### Delete a specific Battery (Delete request)
 
 ```html
-https://alexleblanc-rocketelevators.xyz/api/Batteries/{id}
+https://rocketelevatorsrest-api.azurewebsites.net/api/Batteries/{id}
 ```
 
 <hr>
@@ -55,31 +59,31 @@ https://alexleblanc-rocketelevators.xyz/api/Batteries/{id}
 ### All
 
 ```html
-https://alexleblanc-rocketelevators.xyz/api/Columns/
+https://rocketelevatorsrest-api.azurewebsites.net/api/Columns/
 ```
 
 ### Retrieving a specific Column: Search by id.
 
 ```html
-https://alexleblanc-rocketelevators.xyz/api/Columns/{id}
+https://rocketelevatorsrest-api.azurewebsites.net/api/Columns/{id}
 ```
 
 ### Retrieving the current status of a specific Column
 
 ```html
-https://alexleblanc-rocketelevators.xyz/api/Columns/{id}/status
+https://rocketelevatorsrest-api.azurewebsites.net/api/Columns/{id}/status
 ```
 
 ### Changing the status of a specific Column (PUT request)
 
 ```html
-https://alexleblanc-rocketelevators.xyz/api/Columns/{id}/status
+https://rocketelevatorsrest-api.azurewebsites.net/api/Columns/{id}/status
 ```
 
 ### Delete a specific Battery (Delete request)
 
 ```html
-https://alexleblanc-rocketelevators.xyz/api/Columns/{id}
+https://rocketelevatorsrest-api.azurewebsites.net/api/Columns/{id}
 ```
 
 <hr>
@@ -89,37 +93,37 @@ https://alexleblanc-rocketelevators.xyz/api/Columns/{id}
 ### All
 
 ```html
-https://alexleblanc-rocketelevators.xyz/api/Elevators/
+https://rocketelevatorsrest-api.azurewebsites.net/api/Elevators/
 ```
 
 ### Retrieving a specific Elevator: Search by id.
 
 ```html
-https://alexleblanc-rocketelevators.xyz/api/Elevators/{id}
+https://rocketelevatorsrest-api.azurewebsites.net/api/Elevators/{id}
 ```
 
 ### Retrieving the current status of a specific Elevator
 
 ```html
-https://alexleblanc-rocketelevators.xyz/api/Elevators/{id}/status
+https://rocketelevatorsrest-api.azurewebsites.net/api/Elevators/{id}/status
 ```
 
 ### Changing the status of a specific Elevator (PUT request)
 
 ```html
-https://alexleblanc-rocketelevators.xyz/api/Elevators/{id}/status
+https://rocketelevatorsrest-api.azurewebsites.net/api/Elevators/{id}/status
 ```
 
 ### Retrieving a list of Elevators that are not in operation at the time of the request
 
 ```html
-https://alexleblanc-rocketelevators.xyz/api/ElevatorsOff
+https://rocketelevatorsrest-api.azurewebsites.net/api/ElevatorsOff
 ```
 
 ### Delete a specific Elevator (Delete request)
 
 ```html
-https://alexleblanc-rocketelevators.xyz/api/Elevators/{id}
+https://rocketelevatorsrest-api.azurewebsites.net/api/Elevators/{id}
 ```
 
 <hr>
@@ -129,7 +133,7 @@ https://alexleblanc-rocketelevators.xyz/api/Elevators/{id}
 ### Retrieving a list of Buildings that contain at least one battery, column or elevator requiring intervention
 
 ```html
-https://alexleblanc-rocketelevators.xyz/api/BuildingsOff
+https://rocketelevatorsrest-api.azurewebsites.net/api/BuildingsOff
 ```
 
 <hr>
@@ -139,7 +143,7 @@ https://alexleblanc-rocketelevators.xyz/api/BuildingsOff
 ### Retrieving a list of Leads created in the last 30 days who have not yet become customers.
 
 ```html
-https://alexleblanc-rocketelevators.xyz/api/NotCostumers
+https://rocketelevatorsrest-api.azurewebsites.net/api/NotCostumers
 ```
 
 <hr>
@@ -147,7 +151,7 @@ https://alexleblanc-rocketelevators.xyz/api/NotCostumers
 ## Response Example
 
 ```html
-https://alexleblanc-rocketelevators.xyz/api/Elevators/3
+https://rocketelevatorsrest-api.azurewebsites.net/api/Elevators/3
 ```
 
 ```json
