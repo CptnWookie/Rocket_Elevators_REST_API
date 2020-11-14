@@ -18,7 +18,7 @@ Below are described the REST endpoints available that you can use to connect Roc
 
 ## Link to Postman collection
 
-**[Postman collection](https://www.getpostman.com/collections/bd98e754ee804e6f5fcc)**
+**[Postman collection](https://www.getpostman.com/collections/d852e2a429066e6ccd8b)**
 
 ## Battery
 
