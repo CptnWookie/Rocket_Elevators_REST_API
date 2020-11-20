@@ -21,7 +21,7 @@ namespace RocketApi.Controllers
         }
 
         // GET: api/Interventions : All interventions
-        [HttpGet("Status/Pending")]
+        [HttpGet("/Status/Pending")]
         public ActionResult<List<Interventions>> GetPending () {
             var list = _context.Interventions.ToList ();
             if (list == null) {
