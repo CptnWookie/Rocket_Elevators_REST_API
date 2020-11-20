@@ -21,15 +21,26 @@ namespace RocketApi.Controllers
         }
 
         // GET: api/Interventions : All interventions
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Interventions>>> GetInterventions()
-        {
-            return await _context.Interventions.ToListAsync();
+        [HttpGet("Status/Pending")]
+        public ActionResult<List<Interventions>> GetPending () {
+            var list = _context.Interventions.ToList ();
+            if (list == null) {
+                return NotFound ("Not Found");
+            }
+
+            List<Interventions> list_pending = new List<Interventions> ();
+            foreach (var i in list) {
+                if ((i.Status == "Pending") && (i.StartIntervention == null)) {
+                    list_pending.Add (i);
+                }
+            }
+
+            return list_pending;
         }
 
         // Retrieving a specific Intervention
         // GET: api/Interventions/10 
-        [HttpGet("{id}")]
+        [HttpGet("Status/Pending")]
         public async Task<ActionResult<Interventions>> GetInterventions(long id)
         {
             var interventions = await _context.Interventions.FindAsync(id);
@@ -42,21 +53,7 @@ namespace RocketApi.Controllers
             return interventions;
         }
 
-        // Retrieving the current status of a specific Intervention
-        // GET: api/Interventions/{id}/status
-        [HttpGet("{id}/Status")]
-        public async Task<ActionResult<string>> GetInterventionStatus([FromRoute] long id)
-        {
-            var cc = await _context.Interventions.FindAsync(id);
-
-            if (cc == null)
-                return NotFound();
-            Console.WriteLine("Get Intervention status", cc.Status);
-
-            return cc.Status;
-
-        }
-
+        
         // Changing the status of a specific Intervention
         [HttpPut("{id}/Status")]
         public async Task<IActionResult> UpdateInterventionStatus([FromRoute] long id, Interventions intervention)
@@ -79,23 +76,7 @@ namespace RocketApi.Controllers
 
             return Content("Please insert a valid status : Pending, InProgress, Interrupted, Resumed, Complete, Try again !");
         }
-
-
-        // DELETE: api/Interventions/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Interventions>> DeleteInterventions(long id)
-        {
-            var interventions = await _context.Interventions.FindAsync(id);
-            if (interventions == null)
-            {
-                return NotFound();
-            }
-
-            _context.Interventions.Remove(interventions);
-            await _context.SaveChangesAsync();
-
-            return interventions;
-        }
+       
 
         private bool InterventionsExists(long id)
         {
