@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -646,7 +646,7 @@ namespace RocketApi.Models
                     .HasColumnType("int(11)");
 
                 entity.Property(e => e.EndIntervention)
-                    .HasColumnName("end_intervention")
+                    .HasColumnName("endIntervention")
                     .HasColumnType("datetime");
 
                 entity.Property(e => e.Report)
@@ -663,7 +663,7 @@ namespace RocketApi.Models
                     .HasCollation("utf8_general_ci");
 
                 entity.Property(e => e.StartIntervention)
-                    .HasColumnName("start_intervention")
+                    .HasColumnName("startIntervention")
                     .HasColumnType("datetime");
 
                 entity.Property(e => e.Status)

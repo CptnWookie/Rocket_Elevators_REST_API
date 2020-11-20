@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "d/0tetvzp6wqNtzsn/yjygVzhTJQ+AtjOQMbCYswz+kCMO0Qi132eLw6vEw0n3q3OPMcfeSHon1RFwODvDKGYg==",
-=======
-  "dgSpecHash": "/Imw/Fta21hAoLAldqmJ/JBQoWeQ8Izhw00jN0h6b7WVljOT+nujvmA253Q6xjKLOaqcleoOnK++DXTH4i4jAw==",
->>>>>>> fcf88c7f62fbc2af059c8bb8d4689c4c13a91f3f
   "success": true,
   "projectFilePath": "/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/RocketApi.csproj",
   "expectedPackageFiles": [
