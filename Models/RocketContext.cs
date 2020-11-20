@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -23,6 +23,7 @@ namespace RocketApi.Models
         public virtual DbSet<Customers> Customers { get; set; }
         public virtual DbSet<Elevators> Elevators { get; set; }
         public virtual DbSet<Employees> Employees { get; set; }
+        public virtual DbSet<Interventions> Interventions { get; set; }
         public virtual DbSet<Leads> Leads { get; set; }
         public virtual DbSet<Quotes> Quotes { get; set; }
         public virtual DbSet<SchemaMigrations> SchemaMigrations { get; set; }
@@ -32,8 +33,7 @@ namespace RocketApi.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-
-                optionsBuilder.UseMySql("server=localhost;database=app_development;user=root;password=SimpleYellow;treattinyasboolean=true", x => x.ServerVersion("5.7.32-mysql"));
+                optionsBuilder.UseMySql("server=localhost;database=Alexandre_Leblanc;user=root;password=root;treattinyasboolean=true", x => x.ServerVersion("5.7.32-mysql"));
             }
         }
 
@@ -603,6 +603,79 @@ namespace RocketApi.Models
                 entity.Property(e => e.UserId)
                     .HasColumnName("user_id")
                     .HasColumnType("bigint(20)");
+            });
+
+            modelBuilder.Entity<Interventions>(entity =>
+            {
+                entity.ToTable("interventions");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasColumnType("bigint(20)");
+
+                entity.Property(e => e.Author)
+                    .HasColumnName("author")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.BatteryId)
+                    .HasColumnName("battery_id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.BuildingId)
+                    .HasColumnName("building_id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.ColumnId)
+                    .HasColumnName("column_id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.CreatedAt)
+                    .HasColumnName("created_at")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.CustomerId)
+                    .HasColumnName("customer_id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.ElevatorId)
+                    .HasColumnName("elevator_id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.EmployeeId)
+                    .HasColumnName("employee_id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.EndIntervention)
+                    .HasColumnName("end_intervention")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.Report)
+                    .HasColumnName("report")
+                    .HasColumnType("text")
+                    .HasCharSet("utf8")
+                    .HasCollation("utf8_general_ci");
+
+                entity.Property(e => e.Result)
+                    .HasColumnName("result")
+                    .HasColumnType("varchar(255)")
+                    .HasDefaultValueSql("'Incomplete'")
+                    .HasCharSet("utf8")
+                    .HasCollation("utf8_general_ci");
+
+                entity.Property(e => e.StartIntervention)
+                    .HasColumnName("start_intervention")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.Status)
+                    .HasColumnName("status")
+                    .HasColumnType("varchar(255)")
+                    .HasDefaultValueSql("'Pending'")
+                    .HasCharSet("utf8")
+                    .HasCollation("utf8_general_ci");
+
+                entity.Property(e => e.UpdatedAt)
+                    .HasColumnName("updated_at")
+                    .HasColumnType("datetime");
             });
 
             modelBuilder.Entity<Leads>(entity =>
