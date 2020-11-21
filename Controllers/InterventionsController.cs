@@ -74,10 +74,10 @@ namespace RocketApi.Controllers
                 _context.Entry(intervention).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
 
-                return Content("Intervention: " + intervention.Id + ", status as been change to: " + intervention.Status + " and Start Intervention has been set to " + intervention.StartIntervention );
+                return Content("Intervention: " + intervention.Id + ", status as been change to: " + intervention.Status + " and Start Intervention Date Time has been set to " + intervention.StartIntervention );
             }
 
-            return Content("Please insert a valid status : Intervention, Inactive, Active, Tray again !  ");
+            return Content("Please insert a valid status : InProgress Tray again !  ");
         }
 
 
@@ -98,7 +98,7 @@ namespace RocketApi.Controllers
                 _context.Entry(intervention).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
 
-                return Content("Intervention: " + intervention.Id + ", status as been change to: " + intervention.Status + " and Start Intervention has been set to " + intervention.EndIntervention );
+                return Content("Intervention: " + intervention.Id + ", status as been change to: " + intervention.Status + " and End Intervention Date Time has been set to " + intervention.EndIntervention );
             }
 
             return Content("Please insert a valid status : Complete Tray again !  ");
