@@ -71,7 +71,7 @@ namespace RocketApi.Controllers
             {
                 intervention.Status = "InProgress"; 
                 intervention.StartIntervention = DateTime.Now;
-                _context.Update(intervention).State = EntityState.Modified;
+                _context.Entry(intervention).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
 
                 return Content("Intervention: " + intervention.Id + ", status as been change to: " + intervention.Status + " and Start Intervention has been set to " + intervention.StartIntervention );
@@ -91,17 +91,17 @@ namespace RocketApi.Controllers
                 return Content("Wrong id ! please check and try again");
             }
 
-            if (intervention.Status == "Complete")
+            if (intervention.Status == "InProgress")
             {
                 intervention.Status = "Complete";
                 intervention.EndIntervention = DateTime.Now;
-                _context.Update(intervention).State = EntityState.Modified;
+                _context.Entry(intervention).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
 
                 return Content("Intervention: " + intervention.Id + ", status as been change to: " + intervention.Status + " and Start Intervention has been set to " + intervention.EndIntervention );
             }
 
-            return Content("Please insert a valid status : Intervention, Inactive, Active, Tray again !  ");
+            return Content("Please insert a valid status : Complete Tray again !  ");
         }
 
         private bool InterventionsExists(long id)
