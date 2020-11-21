@@ -5,6 +5,10 @@ namespace RocketApi.Models
 {
     public partial class Interventions
     {
+        public Interventions ()
+        {
+        }
+        
         public long Id { get; set; }
         public int Author { get; set; }
         public int CustomerId { get; set; }
@@ -20,5 +24,6 @@ namespace RocketApi.Models
         public string Status { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
+        
     }
 }

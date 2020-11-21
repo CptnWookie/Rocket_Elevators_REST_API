@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -33,7 +33,7 @@ namespace RocketApi.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("server=localhost;database=Alexandre_Leblanc;user=root;password=root;treattinyasboolean=true", x => x.ServerVersion("5.7.32-mysql"));
+                optionsBuilder.UseMySql("server=codeboxx.cq6zrczewpu2.us-east-1.rds.amazonaws.com;port=3306;database=Alexandre_Leblanc;uid=codeboxx;password=Codeboxx1!", x => x.ServerVersion("5.7.32-mysql"));
             }
         }
 
@@ -646,7 +646,7 @@ namespace RocketApi.Models
                     .HasColumnType("int(11)");
 
                 entity.Property(e => e.EndIntervention)
-                    .HasColumnName("end_intervention")
+                    .HasColumnName("endIntervention")
                     .HasColumnType("datetime");
 
                 entity.Property(e => e.Report)
@@ -663,7 +663,7 @@ namespace RocketApi.Models
                     .HasCollation("utf8_general_ci");
 
                 entity.Property(e => e.StartIntervention)
-                    .HasColumnName("start_intervention")
+                    .HasColumnName("startIntervention")
                     .HasColumnType("datetime");
 
                 entity.Property(e => e.Status)
