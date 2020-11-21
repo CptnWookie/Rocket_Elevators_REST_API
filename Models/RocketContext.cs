@@ -33,7 +33,7 @@ namespace RocketApi.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("server=localhost;database=Alexandre_Leblanc;user=root;password=root;treattinyasboolean=true", x => x.ServerVersion("5.7.32-mysql"));
+                optionsBuilder.UseMySql("server=codeboxx.cq6zrczewpu2.us-east-1.rds.amazonaws.com;port=3306;database=Alexandre_Leblanc;uid=codeboxx;password=Codeboxx1!", x => x.ServerVersion("5.7.32-mysql"));
             }
         }
 

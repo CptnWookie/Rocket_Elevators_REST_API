@@ -59,7 +59,7 @@ namespace RocketApi.Controllers
 
         // Change the status of the intervention request to "InProgress" and add a start date and time (Timestamp).
         // PUT: api/Interventions/10/Init
-        [HttpPut("{id}/Start")]
+        [HttpPut("{id}/Init")]
         public async Task<IActionResult> PutInterventionInProgress([FromRoute] long id, Interventions intervention)
         {
             if (id != intervention.Id)
@@ -67,8 +67,9 @@ namespace RocketApi.Controllers
                 return Content("Wrong id ! please check and try again");
             }
 
-            if (intervention.Status == "InProgress")
+            if (intervention.Status == "Pending" && intervention.StartIntervention == null)
             {
+                intervention.Status = "InProgress"; 
                 intervention.StartIntervention = DateTime.Now;
                 _context.Update(intervention).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
@@ -76,7 +77,7 @@ namespace RocketApi.Controllers
                 return Content("Intervention: " + intervention.Id + ", status as been change to: " + intervention.Status + " and Start Intervention has been set to " + intervention.StartIntervention );
             }
 
-            return Content("Please insert a valid status : InProgress ....... Please try again !");
+            return Content("Please insert a valid status : Intervention, Inactive, Active, Tray again !  ");
         }
 
 
@@ -92,6 +93,7 @@ namespace RocketApi.Controllers
 
             if (intervention.Status == "Complete")
             {
+                intervention.Status = "Complete";
                 intervention.EndIntervention = DateTime.Now;
                 _context.Update(intervention).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
@@ -99,10 +101,8 @@ namespace RocketApi.Controllers
                 return Content("Intervention: " + intervention.Id + ", status as been change to: " + intervention.Status + " and Start Intervention has been set to " + intervention.EndIntervention );
             }
 
-            return Content("Please insert a valid status : Complete ....... Please try again !");
+            return Content("Please insert a valid status : Intervention, Inactive, Active, Tray again !  ");
         }
-
-        
 
         private bool InterventionsExists(long id)
         {
