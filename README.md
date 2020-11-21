@@ -2,23 +2,35 @@
 
 REST API using C # and .NET Core allow requesting Rocket Elevators systems to access and manipulate textual representations of web resources through a set of stateless, predefined uniform operations.
 
-## Members of the team
-
-- **[Alexandre Leblanc](https://github.com/CptnWookie)**
-
-- **[Frimina Zaddi](https://github.com/frimina)**
-
-- **[Rafaela_Schwarz](https://github.com/rafa-3111)**
-
-- **[Saad eddine](https://github.com/saadeddinne)**
-
 # API Endpoints
 
 Below are described the REST endpoints available that you can use to connect Rocket Elevators information system to the equipment in operation throughout the territory served.
 
 ## Link to Postman collection
 
-**[Postman collection](https://www.getpostman.com/collections/e57cf0ec133b2d6e844e)**
+**[Postman collection](https://www.getpostman.com/collections/d5c693e95cd3789e0c5a)**
+
+## Interventions
+
+### All Pending Interventions
+
+```html
+https://rocketelevatorsfoundationrestapi.azurewebsites.net/api/Interventions/Status/Pending
+```
+
+### Changing the specific Pending Intervention status to "InProgress" and adding a timestamp to Start Intervention field the database
+
+```html
+https://rocketelevatorsfoundationrestapi.azurewebsites.net/api/Interventions/10/Init
+```
+
+### Changing the specific InProgress Intervention status to "Complete" and adding a timestamp to End Intervention field the database
+
+```html
+https://rocketelevatorsfoundationrestapi.azurewebsites.net/api/Interventions/{id}/End
+```
+<hr>
+
 
 ## Battery
 
