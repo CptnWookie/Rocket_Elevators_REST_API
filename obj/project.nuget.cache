@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "d/0tetvzp6wqNtzsn/yjygVzhTJQ+AtjOQMbCYswz+kCMO0Qi132eLw6vEw0n3q3OPMcfeSHon1RFwODvDKGYg==",
+  "dgSpecHash": "Aj3V7wXGIhJUDQkWmXW4OiujupzBinqe42KqETWlEQIlcg0NwHooc6Iwu6nmZykxhDF5yvNvuFc+2ZbCup552A==",
   "success": true,
   "projectFilePath": "/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/RocketApi.csproj",
   "expectedPackageFiles": [
@@ -185,7 +185,9 @@
     "/home/alexandre/.nuget/packages/system.xml.xmldocument/4.3.0/system.xml.xmldocument.4.3.0.nupkg.sha512",
     "/home/alexandre/.nuget/packages/system.xml.xmlserializer/4.3.0/system.xml.xmlserializer.4.3.0.nupkg.sha512",
     "/home/alexandre/.nuget/packages/system.xml.xpath/4.0.1/system.xml.xpath.4.0.1.nupkg.sha512",
-    "/home/alexandre/.nuget/packages/system.xml.xpath.xmldocument/4.0.1/system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
+    "/home/alexandre/.nuget/packages/system.xml.xpath.xmldocument/4.0.1/system.xml.xpath.xmldocument.4.0.1.nupkg.sha512",
+    "/home/alexandre/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.8/microsoft.aspnetcore.app.ref.3.1.8.nupkg.sha512",
+    "/home/alexandre/.nuget/packages/microsoft.netcore.app.host.linux-x64/3.1.9/microsoft.netcore.app.host.linux-x64.3.1.9.nupkg.sha512"
   ],
   "logs": []
 }

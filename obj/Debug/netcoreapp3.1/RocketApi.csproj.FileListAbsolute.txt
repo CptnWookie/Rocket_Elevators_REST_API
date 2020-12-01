@@ -300,7 +300,6 @@ D:/CodeBoxx/Rest API final/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/Roc
 D:/CodeBoxx/Rest API final/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.genruntimeconfig.cache
 D:/CodeBoxx/Rest API final/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/appsettings.json
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/appsettings.Development.json
-/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/appsettings.json
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/RocketApi
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/RocketApi.deps.json
@@ -456,3 +455,4 @@ D:/CodeBoxx/Rest API final/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/app
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.Bcl.HashCode.dll
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.dll
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll
+/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/scopedcss/bundle/RocketApi.styles.css
