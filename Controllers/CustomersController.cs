@@ -17,6 +17,22 @@ namespace RocketApi.Controllers
         {
             _context = context;
         }
+
+        //GET: api/Customer/admin@admin.com
+        [HttpGet("{company_contact_email}")]
+        public async Task<ActionResult<Customers>> GetCustomers(string company_contact_email)
+        {
+            var customer = await _context.Customers.FindAsync(company_contact_email);
+
+            if (customer == null)
+            {
+                return NotFound();
+            }
+
+            return customer;
+        }
+
+
         // GET: api/Customers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Customers>>> GetCustomers()
