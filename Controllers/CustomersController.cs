@@ -24,7 +24,7 @@ namespace RocketApi.Controllers
         {
             var customeremail = await _context.Customers.FindAsync(customer.CompanyContactEmail);
 
-            if (customer == null)
+            if (customeremail == null)
             {
                 return NotFound();
             }
