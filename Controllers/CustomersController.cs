@@ -20,9 +20,9 @@ namespace RocketApi.Controllers
 
         //GET: api/Customer/admin@admin.com
         [HttpGet("{company_contact_email}")]
-        public async Task<ActionResult<Customers>> GetCustomers(string company_contact_email)
+        public async Task<ActionResult<Customers>> GetCustomers(string company_contact_email, Customers customer)
         {
-            var customer = await _context.Customers.FindAsync(company_contact_email);
+            var customeremail = await _context.Customers.FindAsync(customer.CompanyContactEmail);
 
             if (customer == null)
             {
