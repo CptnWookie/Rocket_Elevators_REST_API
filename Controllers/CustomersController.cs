@@ -18,18 +18,33 @@ namespace RocketApi.Controllers
             _context = context;
         }
 
-        //GET: api/Customer/admin@admin.com
-        [HttpGet("{company_contact_email}")]
-        public async Task<ActionResult<Customers>> GetCustomers(string company_contact_email, Customers customer)
+        // ========== Get all the infos about a customer (buildings, batteries, columns, elevators) using the customer_id ==========
+        // GET: api/Customers/email
+        [HttpGet("{email}")]
+        public async Task<ActionResult<Customers>> GetCustomer(string email)
         {
-            var customeremail = await _context.Customers.FindAsync(customer.CompanyContactEmail);
-
-            if (customeremail == null)
+            var customer = await _context.Customers.Include("Buildings.Batteries.Columns.Elevators")
+                                                .Where(c => c.CompanyContactEmail == email)
+                                                .FirstOrDefaultAsync();            
+            if (customer == null)
             {
                 return NotFound();
             }
-
             return customer;
+        } 
+        // ========== Verify email for register at the Customer's Portal =========================================================================
+        // GET: api/Customers/verify/cindy@client.com
+        [HttpGet("verify/{email}")]
+        public async Task<ActionResult> VerifyEmail(string email)
+        {
+            var customer = await _context.Customers.Include("Buildings.Batteries.Columns.Elevators")
+                                                .Where(c => c.CompanyContactEmail == email)
+                                                .FirstOrDefaultAsync();            
+            if (customer == null)
+            {
+                return NotFound();
+            }
+            return Ok();
         }
 
 
