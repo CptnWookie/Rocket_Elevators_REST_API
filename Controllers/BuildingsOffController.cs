@@ -22,23 +22,6 @@ namespace RocketApi.Controllers
 
 
         // GET: api/buildings/customer/{id}
-        [HttpGet("Customers/{email}")]
-        public ActionResult<List<Buildings>> GetBuildingsFromCustomerEmail(long id)
-        {
-            List<Buildings> buildingsAll = _context.Buildings.ToList();
-            List<Buildings> buildingsFromCustomer = new List<Buildings>();
-            foreach (Buildings building in buildingsAll)
-            {
-                if (building.CustomerId == id)
-                {
-                    buildingsFromCustomer.Add(building);
-                }
-            }
-            return buildingsFromCustomer;
-        }
-
-
-        // GET: api/buildings/customer/{id}
         [HttpGet("Customers/{id}")]
         public ActionResult<List<Buildings>> GetBuildingsFromCustomer(long id)
         {
