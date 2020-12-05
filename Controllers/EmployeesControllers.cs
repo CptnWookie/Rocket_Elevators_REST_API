@@ -20,7 +20,7 @@ namespace RocketApi.Controllers
             _context = context;
         }
 
-        // GET: api/Elevators : All elevators
+        // GET: api/Employees : All employees
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Employees>>> GetElevators()
         {
