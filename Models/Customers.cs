@@ -25,5 +25,6 @@ namespace RocketApi.Models
         public long? AddressId { get; set; }
 
         public virtual ICollection<Addresses> Addresses { get; set; }
+        // public virtual ICollection<Buildings> Buildings { get; set; }
     }
 }

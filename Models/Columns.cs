@@ -14,5 +14,8 @@ namespace RocketApi.Models
         public string Notes { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
+
+        // public virtual ICollection<Elevators> Elevator { get; set; }
+        // public Batteries batteries { get; set; }
     }
 }

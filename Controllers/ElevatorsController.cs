@@ -42,6 +42,22 @@ namespace RocketApi.Controllers
             return elevators;
         }
 
+        // GET: api/elevators/column/{id}
+        [HttpGet("Columns/{id}")]
+        public ActionResult<List<Elevators>> GetElevatorsFromColumn(long id)
+        {
+            List<Elevators> elevatorsAll = _context.Elevators.ToList();
+            List<Elevators> elevatorsFromColumn = new List<Elevators>();
+            foreach (Elevators elevator in elevatorsAll)
+            {
+                if (elevator.ColumnId == id)
+                {
+                    elevatorsFromColumn.Add(elevator);
+                }
+            }
+            return elevatorsFromColumn;
+        }
+
         // Retrieving the current status of a specific Elevator
         // GET: api/Elevators/{id}/status
         [HttpGet("{id}/Status")]

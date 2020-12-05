@@ -299,6 +299,11 @@ D:/CodeBoxx/Rest API final/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/Roc
 D:/CodeBoxx/Rest API final/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.pdb
 D:/CodeBoxx/Rest API final/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.genruntimeconfig.cache
 D:/CodeBoxx/Rest API final/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/appsettings.json
+/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.csprojAssemblyReference.cache
+/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.AssemblyInfoInputs.cache
+/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.AssemblyInfo.cs
+/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.csproj.CoreCompileInputs.cache
+/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.MvcApplicationPartsAssemblyInfo.cache
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/appsettings.Development.json
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/appsettings.json
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/RocketApi
@@ -315,6 +320,8 @@ D:/CodeBoxx/Rest API final/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/app
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.JsonPatch.dll
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Razor.Language.dll
+/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll
+/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.Bcl.HashCode.dll
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.dll
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.dll
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
@@ -328,7 +335,9 @@ D:/CodeBoxx/Rest API final/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/app
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.SqlServer.dll
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Caching.Abstractions.dll
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Caching.Memory.dll
+/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.dll
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll
+/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.dll
@@ -439,20 +448,11 @@ D:/CodeBoxx/Rest API final/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/app
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.1/System.Security.Principal.Windows.dll
-/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.csprojAssemblyReference.cache
-/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.AssemblyInfoInputs.cache
-/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.AssemblyInfo.cs
-/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.csproj.CoreCompileInputs.cache
-/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.MvcApplicationPartsAssemblyInfo.cache
-/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.RazorTargetAssemblyInfo.cache
-/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.csproj.CopyComplete
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/staticwebassets/RocketApi.StaticWebAssets.Manifest.cache
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/staticwebassets/RocketApi.StaticWebAssets.xml
+/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/scopedcss/bundle/RocketApi.styles.css
+/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.RazorTargetAssemblyInfo.cache
+/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.csproj.CopyComplete
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.dll
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.pdb
 /home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/RocketApi.genruntimeconfig.cache
-/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll
-/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.Bcl.HashCode.dll
-/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.dll
-/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll
-/home/alexandre/Codeboxx/Odyssey/Rocket_Elevators_REST_API/obj/Debug/netcoreapp3.1/scopedcss/bundle/RocketApi.styles.css

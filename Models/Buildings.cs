@@ -30,5 +30,8 @@ namespace RocketApi.Models
         public virtual Employees TechnicalContact { get; set; }
         public virtual ICollection<Addresses> Addresses { get; set; }
         public virtual ICollection<BuildingDetails> BuildingDetails { get; set; }
+        // public virtual ICollection<Batteries> Batteries { get; set; }
+
+        // public Customers customers { get; set; }
     }
 }

@@ -939,6 +939,20 @@ namespace RocketApi.Models
                     .HasColumnType("datetime");
             });
 
+            // modelBuilder.Entity<Interventions>()
+            // .HasKey(x => x.Id);
+
+            // modelBuilder.Entity<Customers>()
+            // .HasKey(x => x.Id);
+
+            // modelBuilder.Entity<Customers>()
+            // .HasMany(x => x.Buildings)
+            // .WithOne(y => y.Customers)
+            // .HadForeignKey(z => z.CustomerId);
+
+
+
+
             OnModelCreatingPartial(modelBuilder);
         }
 

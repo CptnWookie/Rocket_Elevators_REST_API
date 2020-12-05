@@ -42,6 +42,22 @@ namespace RocketApi.Controllers
             return batteries;
         }
 
+        // GET: api/batteries/building/{id}
+        [HttpGet("Buildings/{id}")]
+        public ActionResult<List<Batteries>> GetBatteriesFromBuilding(long id)
+        {
+            List<Batteries> batteriesAll = _context.Batteries.ToList();
+            List<Batteries> batteriesFromBuilding = new List<Batteries>();
+            foreach (Batteries battery in batteriesAll)
+            {
+                if (Convert.ToInt64(battery.BuildingId) == id)
+                {
+                    batteriesFromBuilding.Add(battery);
+                }
+            }
+            return batteriesFromBuilding;
+        }
+
 
         // 1.  Retrieving the current status of a specific Battery
 
