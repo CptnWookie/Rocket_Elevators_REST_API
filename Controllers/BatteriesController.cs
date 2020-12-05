@@ -58,6 +58,21 @@ namespace RocketApi.Controllers
             return batteriesFromBuilding;
         }
 
+        // // GET: api/Customers/email
+        // [HttpGet("{email}/Batteries")]
+        // public  IEnumerable<Batteries> GetBatteriesList(long id)
+        // {
+        //     IEnumerable<Batteries> Batteries =
+
+        //     from building in _context.Buildings
+        //     join batteries in _context.Batteries on building.Id equals batteries.BuildingId
+        //     where batteries.BuildingId == building.Id 
+        //     select batteries;       
+
+        //     return Batteries.Distinct<Buildings>().ToList();
+        // } 
+
+
 
         // 1.  Retrieving the current status of a specific Battery
 
