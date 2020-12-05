@@ -20,7 +20,7 @@ namespace RocketApi.Controllers
             _context = context;
         }
 
-
+        // Will get all the buildings based on a customer id
         // GET: api/buildings/customer/{id}
         [HttpGet("Customers/{id}")]
         public ActionResult<List<Buildings>> GetBuildingsFromCustomer(long id)

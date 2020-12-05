@@ -42,7 +42,8 @@ namespace RocketApi.Controllers
             return batteries;
         }
 
-        // GET: api/batteries/building/{id}
+        // Will get all batteries of a building from a customer id
+        // GET: api/Batteries/Buildings/{id}
         [HttpGet("Buildings/{id}")]
         public ActionResult<List<Batteries>> GetBatteriesFromBuilding(long id)
         {
@@ -58,24 +59,8 @@ namespace RocketApi.Controllers
             return batteriesFromBuilding;
         }
 
-        // // GET: api/Customers/email
-        // [HttpGet("{email}/Batteries")]
-        // public  IEnumerable<Batteries> GetBatteriesList(long id)
-        // {
-        //     IEnumerable<Batteries> Batteries =
-
-        //     from building in _context.Buildings
-        //     join batteries in _context.Batteries on building.Id equals batteries.BuildingId
-        //     where batteries.BuildingId == building.Id 
-        //     select batteries;       
-
-        //     return Batteries.Distinct<Buildings>().ToList();
-        // } 
-
-
-
+        
         // 1.  Retrieving the current status of a specific Battery
-
         // GET: api/Batteries/{id}/status
         [HttpGet("{id}/Status")]
         public async Task<ActionResult<string>> GetBatteryStatus([FromRoute] long id)
@@ -90,8 +75,8 @@ namespace RocketApi.Controllers
 
         }
 
-        //  2. Changing the status of a specific Battery  
 
+        //  2. Changing the status of a specific Battery  
         [HttpPut("{id}/Status/")]
         public async Task<IActionResult> UpdateStatus([FromRoute] long id, Batteries current)
         {
