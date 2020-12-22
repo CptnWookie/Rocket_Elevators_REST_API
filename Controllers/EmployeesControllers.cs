@@ -45,5 +45,20 @@ namespace RocketApi.Controllers
 
             return employee;
         }
+
+        // GET: api/employees/email
+        [HttpGet("employees/{email}")]
+        public async Task<ActionResult<Employee>> GetEmployeesEmail(string email)
+        {
+            IEnumerable<Employee> employeesAll = await _context.employees.ToListAsync();
+            foreach (Employee employee in employeesAll)
+            {
+                if (employee.email == email)
+                {
+                    return employee;
+                }
+            }
+            return NotFound();
+        }
     }
 }
