@@ -48,12 +48,12 @@ namespace RocketApi.Controllers
 
         // GET: api/employees/email
         [HttpGet("employees/{email}")]
-        public async Task<ActionResult<Employee>> GetEmployeesEmail(string email)
+        public async Task<ActionResult<Employees>> GetEmployeesEmail(string email)
         {
-            IEnumerable<Employee> employeesAll = await _context.employees.ToListAsync();
-            foreach (Employee employee in employeesAll)
+            IEnumerable<Employees> employeesAll = await _context.Employees.ToListAsync();
+            foreach (Employees employee in employeesAll)
             {
-                if (employee.email == email)
+                if (employee.Email == email)
                 {
                     return employee;
                 }
