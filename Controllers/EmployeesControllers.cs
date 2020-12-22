@@ -31,5 +31,19 @@ namespace RocketApi.Controllers
         {
             return _context.Employees.Any(e => e.Id == id);
         }
+
+        // GET: api/employees/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Employees>> GetEmployees(long id)
+        {
+            var employee = await _context.Employees.FindAsync(id);
+
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
+            return employee;
+        }
     }
 }
