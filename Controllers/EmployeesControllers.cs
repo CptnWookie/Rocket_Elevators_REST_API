@@ -47,7 +47,7 @@ namespace RocketApi.Controllers
         }
 
         // GET: api/employees/email
-        [HttpGet("employees/{email}")]
+        [HttpGet("{email}")]
         public async Task<ActionResult<Employees>> GetEmployeesEmail(string email)
         {
             IEnumerable<Employees> employeesAll = await _context.Employees.ToListAsync();
