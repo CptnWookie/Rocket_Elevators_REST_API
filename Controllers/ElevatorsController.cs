@@ -93,7 +93,7 @@ namespace RocketApi.Controllers
                 return Content("Elevator: " + elevator.Id + ", status as been change to: " + elevator.ElevatorStatus);
             }
 
-            return Content("Please insert a valid status : Intervention, Inactive, Active, Tray again !  ");
+            return Content("Request Invalid");
         }
 
 
