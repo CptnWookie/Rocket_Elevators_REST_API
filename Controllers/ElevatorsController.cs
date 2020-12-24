@@ -96,28 +96,8 @@ namespace RocketApi.Controllers
             return Content("Request Invalid");
         }
 
-         // PUT: api/Elevator/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPut("{id}/off")]
-        public async Task<IActionResult> PutElevator(long id, Elevators elevator)
-        {
-            var e = await _context.Elevators.FindAsync(id);
-            if (e == null)
-            {
-                return NotFound();
-            }
-
-            e.ElevatorStatus = elevator.ElevatorStatus;
-
-            _context.Elevators.Update(e);
-            _context.SaveChanges();
-
-            // Create a message to show the new status
-            return Content(e.ElevatorStatus);
-        }
-
-         // PUT: api/Elevator/5
+        
+        // PUT: api/Elevator/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}/active")]
