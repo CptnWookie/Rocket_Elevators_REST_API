@@ -100,21 +100,43 @@ namespace RocketApi.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}/off")]
-        public async Task<IActionResult> PutElevator(long id, Elevator elevator)
+        public async Task<IActionResult> PutElevator(long id, Elevators elevator)
         {
-            var e = await _context.elevators.FindAsync(id);
+            var e = await _context.Elevators.FindAsync(id);
             if (e == null)
             {
                 return NotFound();
             }
 
-            e.elevator_status = elevator.elevator_status;
+            e.ElevatorStatus = elevator.ElevatorStatus;
 
-            _context.elevators.Update(e);
+            _context.Elevators.Update(e);
             _context.SaveChanges();
 
             // Create a message to show the new status
-            return Content(e.elevator_status);
+            return Content(e.ElevatorStatus);
+        }
+
+         // PUT: api/Elevator/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for
+        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        [HttpPut("{id}/active")]
+        public async Task<IActionResult> UpdateStatus(long id, Elevators elevator)
+        {
+            var e = await _context.Elevators.FindAsync(id);
+            if (e == null)
+            {
+                return NotFound();
+            }
+
+
+            e.ElevatorStatus = elevator.ElevatorStatus;
+
+            _context.Elevators.Update(e);
+            await _context.SaveChangesAsync();
+
+            // Create a message to show the new status
+            return Content(e.ElevatorStatus);
         }
 
 
